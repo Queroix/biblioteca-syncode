@@ -1,0 +1,53 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Novo Livro</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+
+    <form #userPost="" (ngSubmit)="onSubmit(userPost.value)">
+      <div class="form-group">
+        <label for="inputNomeLivro">Nome do Livro*</label>
+        <input type="text" class="form-control" id="inputNomeLivro" placeholder="Codigo Limpo">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputAutor">Autor*</label>
+          <input type="text" class="form-control" id="inputAutor" placeholder="Robert C. Martin" ngModel>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputEdicao">Edição</label>
+          <input type="text" class="form-control" id="inputEdicao" placeholder="1ª Edicao" ngModel>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputLinkCapa">Link da Capa*</label>
+          <input type="text" class="form-control" id="inputLinkCapa"
+            placeholder="https://home.adaptei.com.br/biblioteca/3DF53382-6595-4ED8-AAD5-B41EFCFD0162/41IRFCLk-kL.jpg" ngModel>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputDataPublicacao">Data de Publicação*</label>
+          <input type="date" class="form-control" id="inputDataPublicacao" ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputResumo">Resumo</label>
+        <textarea class="form-control" id="inputResumo" rows="3" ngModel></textarea>
+      </div>
+    </form>
+
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('cancel click')">Cancelar</button>
+    <button type="submit" class="btn btn-outline-sucess" (click)="createLivro()"
+    (click)="modal.close('Save click')">Salvar</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-primary" (click)="open(content)">Novo Livro</button>

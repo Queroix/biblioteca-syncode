@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Livro } from './livros/livro/livro';
+import { LivroService } from './livros/livro/livro-service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'biblioteca';
+
 }

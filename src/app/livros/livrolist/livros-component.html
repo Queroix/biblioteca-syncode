@@ -1,0 +1,12 @@
+<div class="text-center" *ngIf="!livros.length">
+    <img src='../../../assets/img/notfound.png' alt="">
+    <p>Sem livros na lista</p>
+    <p>Refaça sua busca ou cadastre o livro no botao Cadastrar Livro</p>
+</div>
+
+<ol class="list-unstyled">
+
+    <syn-livrolistcomponent [livros]="livros">
+    </syn-livrolistcomponent>
+
+</ol>

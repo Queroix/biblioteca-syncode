@@ -1,0 +1,29 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirmação de Exclusao</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+
+    <div class="text-center">
+      <img src='../../../assets/img/check.png' alt="">
+      <p>Confirma a exclusão do livro "{{livro.nomeLivro}}"?</p>
+    </div>
+
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Cancelar</button>
+    <button type="button" class="btn btn-outline-sucess" (click)="removeFromAPI()"
+      (click)="modal.close('Save click')">Confirmar</button>
+  </div>
+</ng-template>
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Excluir</button> -->
+<a (click)="open(content)">
+  <label class="btnModal">Excluir</label>
+</a>

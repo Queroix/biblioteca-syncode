@@ -1,0 +1,52 @@
+<!-- <div>
+    <img [src]="capaLink" [alt]="nomeLivro">
+    <p>Livro: {{ nomeLivro }} </p>
+    <p>autor {{ nomeAutor }}</p>
+    <p>data {{ dataPublicacao }}</p>
+    <p>edicao {{ edicao }} </p>
+    <p>resumo {{ resumoLivro }}</p>
+</div> -->
+
+<div class="cardhover box">
+
+
+
+    <div class="card container">
+        <div (mouseover)="changeText=true">            
+            <div>
+                <img [src]="livro.capaLink" [alt]="livro.nomeLivro" style="width:100%">
+            </div>
+            <h4><b>{{ livro.nomeLivro }}</b></h4>
+            <p>{{livro.nomeAutor}} - {{livro.edicao}}</p>
+
+            <div *ngIf(livro.isDisponivelParaEmprestimo)>
+                <img src='../../../assets/img/disponivel.png' alt="">
+              </div>
+              <div *ngIf(livro.isDisponivelParaEmprestimo)>
+                <img src='../../../assets/img/locado.png' alt="">
+              </div>
+        </div>
+    </div>
+
+    <div class="cardhover" *ngIf="changeText" (mouseout)="changeText=false">
+        <div class="cardbuttons container text-center">
+            <br><br>
+            <div>
+                <syn-emprestarcomponent [livro]="livro"></syn-emprestarcomponent>
+            </div>
+            <hr>
+            <div>
+                <syn-devolvercomponent [livro]="livro"></syn-devolvercomponent>
+            </div>
+            <hr>
+            <div>
+                <syn-editarcomponent [livro]="livro"></syn-editarcomponent>
+            </div>
+            <hr>
+            <div>
+                <syn-excluircomponent [livro]="livro"></syn-excluircomponent>
+            </div>
+        </div>
+
+    </div>
+</div>

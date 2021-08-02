@@ -1,0 +1,35 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Novo Livro</h4>
+      <button type="button" class="close btn btn-sucess" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+  
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="inputLinkCapa">Nome do Livro*</label>
+            <p>{{ livro.nomeLivro}} </p>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputDataDevolucao">Data de Devolução*</label>
+            <input type="date" class="form-control" id="inputDataDevolucao">
+          </div>
+        </div>
+        
+  
+  
+  
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('cancel click')">Cancelar</button>
+      <button type="button" class="btn btn-outline-sucess" (click)="updateEmprestimo()"
+       (click)="modal.close()">Salvar</button>
+    </div>
+  </ng-template>
+  
+  <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Emprestar</button> -->
+  <a (click)="open(content)">
+    <label class="btnModal">Emprestar</label>
+  </a>

@@ -1,0 +1,8 @@
+<ol class="list-unstyled">
+    <li *ngFor="let cols of rows" class="row">
+        <div *ngFor="let livro of cols" class="col-md-3">
+            <syn-livrocomponent [livro]="livro">
+            </syn-livrocomponent>
+        </div>
+    </li>
+</ol>

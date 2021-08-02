@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-10">
+        <h1>Lista de Livros</h1>
+    </div>
+    <div class="col right">
+        <syn-cadastrocomponent></syn-cadastrocomponent>
+    </div>
+
+</div>
+<div class="row right">
+    <nav class="navbar background">
+
+        <form class="form-inline">
+            <button class="btn btn-primary" type="button">Todos</button>
+            <button class="btn btn-primary" type="button">Locados</button>
+            <button class="btn btn-primary" type="button">Disponiveis</button>
+
+            <input class="form-control m-sm-2" type="date" aria-label="FiltroData" value="Publicado em">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquise aqui" aria-label="FiltroNome"
+                autofocus #newItem (keyup)="addNewItem(newItem.value)">
+                <!-- <button (click)="addNewItem(newItem.value)" >Pesquisar</button> -->
+        </form>
+    </nav>
+</div>
